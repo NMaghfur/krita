@@ -98,3 +98,8 @@ install(FILES  org.kde.krita.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR} 
 
 install(DIRECTORY DESTINATION ${DATA_INSTALL_DIR}/krita/shortcuts)
 
+
+if (Qt5Quick_FOUND AND NOT MSYS)
+   add_subdirectory(sketch)
+#    add_subdirectory(gemini)
+endif ()

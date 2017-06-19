@@ -264,6 +264,7 @@ protected:
     void dragEnterEvent(QDragEnterEvent * event) override;
     void dropEvent(QDropEvent * event) override;
     void closeEvent(QCloseEvent *event) override;
+    bool event( QEvent* event ) override;
 
     /**
      * Generate a name for this view.

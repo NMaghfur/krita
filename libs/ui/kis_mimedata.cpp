@@ -267,8 +267,7 @@ QList<KisNodeSP> KisMimeData::tryLoadInternalNodes(const QMimeData *data,
 QList<KisNodeSP> KisMimeData::loadNodes(const QMimeData *data,
                                         const QRect &imageBounds,
                                         const QPoint &preferredCenter,
-                                        bool forceRecenter,
-                                        KisImageWSP image,
+                                        bool forceRecenter, KisImageWSP image,
                                         KisShapeController *shapeController)
 {
     bool alwaysRecenter = false;
