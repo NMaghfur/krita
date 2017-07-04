@@ -155,47 +155,47 @@ void ColorSelectorItem::Private::repaint()
 void ColorSelectorItem::geometryChanged(const QRectF& newGeometry, const QRectF& oldGeometry)
 {
     QRectF bounds = boundingRect();
-    if (d->selector->configuration().subType==KisColorSelector::Ring)
-    {
-        d->ring->setGeometry(bounds.x(),bounds.y(),bounds.width(), bounds.height());
-        if (d->selector->configuration().mainType==KisColorSelector::Triangle)
-        {
-            d->triangle->setGeometry(bounds.width()/2 - d->ring->innerRadius(),
-                                     bounds.height()/2 - d->ring->innerRadius(),
-                                     d->ring->innerRadius()*2,
-                                     d->ring->innerRadius()*2);
-        }
-        else
-        {
-            int size = d->ring->innerRadius()*2/sqrt(2.);
-            d->square->setGeometry(bounds.width()/2 - size/2,
-                                   bounds.height()/2 - size/2,
-                                   size,
-                                   size);
-        }
-    }
-    else
-    {
-        // type wheel and square
-        if (d->selector->configuration().mainType==KisColorSelector::Wheel)
-        {
-            d->main->setGeometry(bounds.x(), bounds.y() + height()*0.1, bounds.width(), bounds.height()*0.9);
-            d->sub->setGeometry( bounds.x(), bounds.y(),                bounds.width(), bounds.height()*0.1);
-        }
-        else
-        {
-            if (bounds.height()>bounds.width())
-            {
-                d->main->setGeometry(bounds.x(), bounds.y() + bounds.height()*0.1, bounds.width(), bounds.height()*0.9);
-                d->sub->setGeometry( bounds.x(), bounds.y(),                       bounds.width(), bounds.height()*0.1);
-            }
-            else
-            {
-                d->main->setGeometry(bounds.x(), bounds.y() + bounds.height()*0.1, bounds.width(), bounds.height()*0.9);
-                d->sub->setGeometry( bounds.x(), bounds.y(),                       bounds.width(), bounds.height()*0.1);
-            }
-        }
-    }
+//    if (d->selector->configuration().subType==KisColorSelector::Ring)
+//    {
+//        d->ring->setGeometry(bounds.x(),bounds.y(),bounds.width(), bounds.height());
+//        if (d->selector->configuration().mainType==KisColorSelector::Triangle)
+//        {
+//            d->triangle->setGeometry(bounds.width()/2 - d->ring->innerRadius(),
+//                                     bounds.height()/2 - d->ring->innerRadius(),
+//                                     d->ring->innerRadius()*2,
+//                                     d->ring->innerRadius()*2);
+//        }
+//        else
+//        {
+//            int size = d->ring->innerRadius()*2/sqrt(2.);
+//            d->square->setGeometry(bounds.width()/2 - size/2,
+//                                   bounds.height()/2 - size/2,
+//                                   size,
+//                                   size);
+//        }
+//    }
+//    else
+//    {
+//        // type wheel and square
+//        if (d->selector->configuration().mainType==KisColorSelector::Wheel)
+//        {
+//            d->main->setGeometry(bounds.x(), bounds.y() + height()*0.1, bounds.width(), bounds.height()*0.9);
+//            d->sub->setGeometry( bounds.x(), bounds.y(),                bounds.width(), bounds.height()*0.1);
+//        }
+//        else
+//        {
+//            if (bounds.height()>bounds.width())
+//            {
+//                d->main->setGeometry(bounds.x(), bounds.y() + bounds.height()*0.1, bounds.width(), bounds.height()*0.9);
+//                d->sub->setGeometry( bounds.x(), bounds.y(),                       bounds.width(), bounds.height()*0.1);
+//            }
+//            else
+//            {
+//                d->main->setGeometry(bounds.x(), bounds.y() + bounds.height()*0.1, bounds.width(), bounds.height()*0.9);
+//                d->sub->setGeometry( bounds.x(), bounds.y(),                       bounds.width(), bounds.height()*0.1);
+//            }
+//        }
+//    }
 
     if (d->view) {
         d->selector->setColor(Acs::currentColor(d->view->resourceProvider(), d->colorRole));

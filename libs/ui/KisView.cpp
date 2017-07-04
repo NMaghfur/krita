@@ -693,7 +693,6 @@ bool KisView::event(QEvent *event)
 
         syncObject->mirrorHorizontal = provider->mirrorHorizontal();
         syncObject->mirrorVertical = provider->mirrorVertical();
-        syncObject->mirrorAxesCenter = provider->resourceManager()->resource(KisCanvasResourceProvider::MirrorAxesCenter).toPointF();
 
         KisToolFreehand* tool = qobject_cast<KisToolFreehand*>(KoToolManager::instance()->toolById(canvasBase(), syncObject->activeToolId));
         if(tool) {
@@ -722,7 +721,6 @@ bool KisView::event(QEvent *event)
         if(syncObject->initialized) {
             KisCanvasResourceProvider* provider = resourceProvider();
 
-            provider->resourceManager()->setResource(KisCanvasResourceProvider::MirrorAxesCenter, syncObject->mirrorAxesCenter);
             if (provider->mirrorHorizontal() != syncObject->mirrorHorizontal) {
                 QAction* mirrorAction = d->actionCollection->action("hmirror_action");
                 mirrorAction->setChecked(syncObject->mirrorHorizontal);

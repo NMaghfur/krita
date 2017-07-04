@@ -106,7 +106,7 @@ public:
     KisFilterMaskSP mask;
     KisNodeSP node;
     int previewFilterID;
-    KisSafeFilterConfigurationSP newConfig;
+    KisFilterConfigurationSP newConfig;
     QTimer* previewTimer;
 };
 
@@ -211,19 +211,19 @@ void FiltersCategoryModel::filterConfigurationChanged(int index, FiltersModel* m
     {
         if (!model) {
             model = qobject_cast<FiltersModel*>(sender());
-        } 
+        }
         if (!model) {
             return;
         }
-        KisSafeFilterConfigurationSP config;
+        KisFilterConfigurationSP config;
         KisFilter* filter = model->filter(index);
-        if(filter->showConfigurationWidget() && filter->id() != QLatin1String("colortransfer")) {
+        if (filter->showConfigurationWidget() && filter->id() != QLatin1String("colortransfer")) {
             KisConfigWidget* wdg = filter->createConfigurationWidget(0, d->view->activeNode()->original());
             wdg->deleteLater();
-            config = KisSafeFilterConfigurationSP(KisFilterRegistry::instance()->cloneConfiguration(static_cast<KisFilterConfiguration*>(wdg->configuration())));
+            config = KisFilterConfigurationSP(KisFilterRegistry::instance()->cloneConfiguration(dynamic_cast<KisFilterConfiguration*>(wdg->configuration().data())));
         }
         else {
-            config = KisSafeFilterConfigurationSP(KisFilterRegistry::instance()->cloneConfiguration(filter->defaultConfiguration(d->view->activeNode()->original())));
+            config = KisFilterConfigurationSP(KisFilterRegistry::instance()->cloneConfiguration(filter->defaultConfiguration()));
         }
         QObject* configuration = d->categories[d->currentCategory]->configuration(index);
         Q_FOREACH (const QByteArray& propName, configuration->dynamicPropertyNames()) {

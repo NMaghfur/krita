@@ -42,7 +42,6 @@ public:
     void writeConfigurationSafe(KisPropertiesConfigurationSP config) const;
     void setConfigurationSafe(const KisPropertiesConfigurationSP config);
 
-protected:
     void setConfiguration(const KisPropertiesConfigurationSP  config) override = 0;
     virtual void writeConfiguration(KisPropertiesConfigurationSP config) const = 0;
 

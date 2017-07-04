@@ -300,7 +300,7 @@ void KisSketchView::documentAboutToBeDeleted()
 void KisSketchView::documentChanged()
 {
     d->doc = DocumentManager::instance()->document();
-	if (!d->doc) return;
+    if (!d->doc) return;
     if (!d->viewManager) return;
 
     connect(d->doc, SIGNAL(modified(bool)), SIGNAL(modifiedChanged()));
@@ -320,7 +320,7 @@ void KisSketchView::documentChanged()
     KisCanvasController *controller = static_cast<KisCanvasController*>(d->canvas->canvasController());
 
     connect(d->viewManager, SIGNAL(floatingMessageRequested(QString,QString)), this, SIGNAL(floatingMessageRequested(QString,QString)));
-    
+
     controller->setGeometry(x(), y(), width(), height());
     d->view->hide();
 
@@ -368,7 +368,7 @@ void KisSketchView::documentChanged()
     d->viewManager->actionCollection()->action("zoom_to_100pct")->trigger();
     d->resetDocumentPosition();
 
-	emit viewChanged();
+    emit viewChanged();
 
 }
 
@@ -412,7 +412,7 @@ bool KisSketchView::event( QEvent* event )
 
                 syncObject->mirrorHorizontal = provider->mirrorHorizontal();
                 syncObject->mirrorVertical = provider->mirrorVertical();
-                syncObject->mirrorAxesCenter = provider->resourceManager()->resource(KisCanvasResourceProvider::MirrorAxesCenter).toPointF();
+                //syncObject->mirrorAxesCenter = provider->resourceManager()->resource(KisCanvasResourceProvider::MirrorAxesCenter).toPointF();
 
                 KisToolFreehand* tool = qobject_cast<KisToolFreehand*>(KoToolManager::instance()->toolById(d->view->canvasBase(), syncObject->activeToolId));
                 if(tool) {
@@ -449,7 +449,7 @@ bool KisSketchView::event( QEvent* event )
 
                 provider->setMirrorHorizontal(syncObject->mirrorHorizontal);
                 provider->setMirrorVertical(syncObject->mirrorVertical);
-                provider->resourceManager()->setResource(KisCanvasResourceProvider::MirrorAxesCenter, syncObject->mirrorAxesCenter);
+                //provider->resourceManager()->setResource(KisCanvasResourceProvider::MirrorAxesCenter, syncObject->mirrorAxesCenter);
 
                 provider->setPaintOpPreset(syncObject->paintOp);
                 qApp->processEvents();
@@ -512,7 +512,7 @@ bool KisSketchView::event( QEvent* event )
     // QT5TODO
 #if 0
 bool KisSketchView::sceneEvent(QEvent* event)
-{    
+{
     if (d->canvas && d->canvasWidget) {
         switch(event->type()) {
         case QEvent::GraphicsSceneMousePress: {

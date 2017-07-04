@@ -32,7 +32,7 @@ public:
     {};
     KisViewManager* view;
     QList<KisFilterSP> filters;
-    QList<KisSafeFilterConfigurationSP> configurations;
+    QList<KisFilterConfigurationSP> configurations;
 };
 
 FiltersModel::FiltersModel(QObject* parent)
@@ -101,7 +101,7 @@ void FiltersModel::activateFilter(int index)
         }
         else
         {
-            d->view->filterManager()->apply(KisSafeFilterConfigurationSP(d->filters[index]->defaultConfiguration(d->view->activeNode()->original())));
+            d->view->filterManager()->apply(KisFilterConfigurationSP(d->filters[index]->defaultConfiguration()));
         }
         d->view->filterManager()->finish();
         emit filterActivated(index);
@@ -134,11 +134,11 @@ void FiltersModel::addFilter(KisFilterSP filter)
         if (filter->showConfigurationWidget() && filter->id() != QLatin1String("colortransfer")) {
             KisConfigWidget* wdg = filter->createConfigurationWidget(0, d->view->activeNode()->original());
             wdg->deleteLater();
-            d->configurations << KisSafeFilterConfigurationSP(static_cast<KisFilterConfiguration*>(wdg->configuration()));
+            d->configurations << KisFilterConfigurationSP(dynamic_cast<KisFilterConfiguration*>(wdg->configuration().data()));
 
         }
         else {
-            d->configurations << KisSafeFilterConfigurationSP(filter->defaultConfiguration(d->view->activeNode()->original()));
+            d->configurations << KisFilterConfigurationSP(filter->defaultConfiguration());
         }
         endInsertRows();
     }
@@ -166,11 +166,11 @@ QObject* FiltersModel::configuration(int index)
         if(d->filters[index]->showConfigurationWidget() && d->filters[index]->id() != QLatin1String("colortransfer")) {
             KisConfigWidget* wdg = d->filters[index]->createConfigurationWidget(0, d->view->activeNode()->original());
             wdg->deleteLater();
-            d->configurations[index] = KisSafeFilterConfigurationSP(static_cast<KisFilterConfiguration*>(wdg->configuration()));
+            d->configurations[index] = KisFilterConfigurationSP(dynamic_cast<KisFilterConfiguration*>(wdg->configuration().data()));
         }
         // If we've not got one already, assign the default configuration to the cache
         else {
-            d->configurations[index] = KisSafeFilterConfigurationSP(d->filters[index]->defaultConfiguration(d->view->activeNode()->original()));
+            d->configurations[index] = KisFilterConfigurationSP(d->filters[index]->defaultConfiguration());
         }
     }
     QMap<QString, QVariant> props = d->configurations[index]->getProperties();
@@ -188,7 +188,7 @@ void FiltersModel::setConfiguration(int index, QObject* configuration)
 {
     if (qobject_cast< PropertyContainer* >(configuration) && index > -1 && index < d->configurations.count() - 1)
     {
-        KisSafeFilterConfigurationSP config = d->configurations[index];
+        KisFilterConfigurationSP config = d->configurations[index];
         Q_FOREACH (const QByteArray& propName, configuration->dynamicPropertyNames())
         {
             config->setProperty(QString(propName), configuration->property(propName));

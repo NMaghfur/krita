@@ -100,8 +100,8 @@ public:
         {
             // IMPORTANT: set the PaintOp size before setting the other properties
             //            it wont work the other way
-            qreal sizeDiff = size - currentPreset->settings()->paintOpSize().width();
-            currentPreset->settings()->changePaintOpSize(sizeDiff, 0);
+            qreal sizeDiff = size - currentPreset->settings()->paintOpSize();
+            //currentPreset->settings()->changePaintOpSize(sizeDiff, 0);
 
             if (currentPreset->settings()->hasProperty("OpacityValue"))
                 currentPreset->settings()->setProperty("OpacityValue", opacity);
@@ -412,7 +412,7 @@ void CompositeOpModel::resourceChanged(int key, const QVariant& /*v*/)
                 preset->settings()->setOptionsWidget(d->settingsWidgets[preset.data()]);
             }
 
-            d->size = preset->settings()->paintOpSize().width();
+            d->size = preset->settings()->paintOpSize();
             emit sizeChanged();
 
             if (preset->settings()->hasProperty("OpacityValue"))  {

@@ -101,7 +101,7 @@ public:
     LayerThumbProvider* thumbProvider;
     QHash<QString, const KisFilter*> filters;
 
-    KisFilterConfiguration* newConfig;
+    KisFilterConfigurationSP newConfig;
     QTimer* updateActiveLayerWithNewFilterConfigTimer;
 
     QTimer* imageChangedTimer;
@@ -993,7 +993,7 @@ void LayerModel::setActiveFilterConfig(QObject* newConfig)
         return;
 
     //dbgKrita << "Attempting to set new config" << config->name();
-    KisFilterConfiguration* realConfig = d->filters.value(config->name())->factoryConfiguration(d->activeNode->original());
+    KisFilterConfigurationSP realConfig = d->filters.value(config->name())->factoryConfiguration();
     QMap<QString, QVariant>::const_iterator i;
     for(i = realConfig->getProperties().constBegin(); i != realConfig->getProperties().constEnd(); ++i)
     {
