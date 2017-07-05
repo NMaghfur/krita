@@ -17,6 +17,7 @@
 
 #include "TouchDockerDock.h"
 
+#include <QtQuickWidgets/QQuickWidget>
 #include <QAction>
 #include <klocalizedstring.h>
 #include <kactioncollection.h>
@@ -26,14 +27,13 @@
 #include <kis_canvas2.h>
 #include <KisMainWindow.h>
 
-TouchDockerDock::TouchDockerDock( ) 
+TouchDockerDock::TouchDockerDock( )
     : QDockWidget(i18n("Touch Docker"))
 {
-    QWidget* widget = new QWidget(this);
-    setupUi(widget);
+    QQuickWidget *widget = new QQuickWidget(this);
     setWidget(widget);
     setEnabled(true);
-
+    widget->setSource(QUrl("qrc:/hello.qml"));
 }
 
 TouchDockerDock::~TouchDockerDock()

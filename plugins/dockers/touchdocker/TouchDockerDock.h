@@ -20,11 +20,10 @@
 
 #include <QDockWidget>
 #include <KoCanvasObserverBase.h>
-#include "ui_WdgTouchDocker.h"
 
 class KisCanvas2;
 
-class TouchDockerDock : public QDockWidget, public KoCanvasObserverBase, public Ui_WdgTouchDocker {
+class TouchDockerDock : public QDockWidget, public KoCanvasObserverBase {
     Q_OBJECT
 public:
     TouchDockerDock();
