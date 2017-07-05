@@ -53,17 +53,17 @@ public:
         : q(qq)
         , allowClose(true)
         , viewManager(0)
-	{
+    {
         centerer = new QTimer(q);
         centerer->setInterval(10);
         centerer->setSingleShot(true);
         connect(centerer, SIGNAL(timeout()), q, SLOT(adjustZoomOnDocumentChangedAndStuff()));
-	}
-	MainWindow* q;
+    }
+    MainWindow* q;
     bool allowClose;
     KisViewManager* viewManager;
     QString currentSketchPage;
-	QTimer *centerer;
+    QTimer *centerer;
 };
 
 MainWindow::MainWindow(QStringList fileNames, QWidget* parent, Qt::WindowFlags flags)
@@ -114,6 +114,8 @@ MainWindow::MainWindow(QStringList fileNames, QWidget* parent, Qt::WindowFlags f
 #else
     QString mainqml = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kritasketch/kritasketch.qml");
 #endif
+
+    qDebug() << mainqml;
 
     Q_ASSERT(QFile::exists(mainqml));
     if (!QFile::exists(mainqml)) {

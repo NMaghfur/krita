@@ -51,11 +51,16 @@
 #endif
 
 
+#include <QLoggingCategory>
+
 int main( int argc, char** argv )
 {
     QString kritaVersion(KRITA_VERSION_STRING);
     QString version;
 
+    QLoggingCategory::setFilterRules("krita*.debug=false\n"
+                                     "krita*.warning=true\n"
+                                     "krita.tabletlog=true");
 
 #ifdef KRITA_GIT_SHA1_STRING
     QString gitVersion(KRITA_GIT_SHA1_STRING);
