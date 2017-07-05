@@ -76,8 +76,10 @@ target_link_libraries(kritasketchplugin
     Qt5::Core
     kritawidgets
     kritaui
-    kritasketchlib
+    kritaqml
 )
 
 install(TARGETS   kritasketchplugin DESTINATION ${QML_INSTALL_DIR}/org/krita/sketch)
+install(FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/krita/sketch)
+
 

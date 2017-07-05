@@ -1,7 +1,6 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
 <qresource prefix="/">
-<file>qmldir</file>
 <file>qml/images/camera-web.png</file>
 <file>qml/images/red.png</file>
 <file>qml/images/edit-redo.png</file>

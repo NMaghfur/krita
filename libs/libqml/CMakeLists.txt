@@ -27,7 +27,7 @@ set(kritaqml_SRCS
 
 qt5_add_resources(kritaqml_SRCS qml.qrc)
 
-add_library(kritaqml SHARED ${kritasketchlib_SRCS})
+add_library(kritaqml SHARED ${kritaqml_SRCS})
 generate_export_header(kritaqml BASE_NAME krita_sketch)
 set_target_properties(kritaqml
     PROPERTIES VERSION ${GENERIC_KRITA_LIB_VERSION} SOVERSION ${GENERIC_KRITA_LIB_SOVERSION}
@@ -43,5 +43,5 @@ target_link_libraries(kritaqml
 
 include(GNUInstallDirs)
 install(TARGETS kritaqml ${INSTALL_TARGETS_DEFAULT_ARGS})
-
+install(DIRECTORY themes DESTINATION ${DATA_INSTALL_DIR}/krita/qmlthemes)
 
