@@ -39,7 +39,6 @@ ecm_install_icons(ICONS
     "${CMAKE_CURRENT_SOURCE_DIR}/pics/mimetypes/1024-mimetypes-application-x-krita.png"
     DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor)
 
-# separate listing, both used by Krita and KritaSketch
 set(krita_QRCS
     ${CMAKE_SOURCE_DIR}/krita/krita.qrc
     ${CMAKE_SOURCE_DIR}/krita/pics/Breeze-dark/breeze-dark-icons.qrc
@@ -97,9 +96,3 @@ install(FILES  krita.action kritamenu.action DESTINATION ${DATA_INSTALL_DIR}/kri
 install(FILES  org.kde.krita.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR} )
 
 install(DIRECTORY DESTINATION ${DATA_INSTALL_DIR}/krita/shortcuts)
-
-
-if (Qt5Quick_FOUND AND NOT MSYS)
-   add_subdirectory(sketch)
-#    add_subdirectory(gemini)
-endif ()
