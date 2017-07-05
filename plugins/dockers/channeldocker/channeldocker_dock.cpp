@@ -57,7 +57,7 @@ ChannelDockerDock::ChannelDockerDock( ) :
 
 void ChannelDockerDock::setCanvas(KoCanvasBase * canvas)
 {
-    if(m_canvas == canvas)
+    if (m_canvas == canvas)
         return;
 
     setEnabled(canvas != 0);
