@@ -11,7 +11,7 @@
       <iconText></iconText>
       <activationFlags>10000</activationFlags>
       <activationConditions>0</activationConditions>
-      <shortcut>ctrl+alt+1</shortcut>
+      <shortcut>s,1</shortcut>
       <isCheckable>false</isCheckable>
       <statusTip></statusTip>
     </Action>
@@ -24,7 +24,7 @@
       <iconText></iconText>
       <activationFlags>10000</activationFlags>
       <activationConditions>0</activationConditions>
-      <shortcut>ctrl+alt+2</shortcut>
+      <shortcut>s,2</shortcut>
       <isCheckable>false</isCheckable>
       <statusTip></statusTip>
     </Action>
@@ -37,7 +37,7 @@
       <iconText></iconText>
       <activationFlags>10000</activationFlags>
       <activationConditions>0</activationConditions>
-      <shortcut>ctrl+alt+3</shortcut>
+      <shortcut>s,3</shortcut>
       <isCheckable>false</isCheckable>
       <statusTip></statusTip>
     </Action>
@@ -50,7 +50,7 @@
       <iconText></iconText>
       <activationFlags>10000</activationFlags>
       <activationConditions>0</activationConditions>
-      <shortcut>ctrl+alt+4</shortcut>
+      <shortcut>s,4</shortcut>
       <isCheckable>false</isCheckable>
       <statusTip></statusTip>
     </Action>
@@ -63,7 +63,7 @@
       <iconText></iconText>
       <activationFlags>10000</activationFlags>
       <activationConditions>0</activationConditions>
-      <shortcut>ctrl+alt+5</shortcut>
+      <shortcut>s,5</shortcut>
       <isCheckable>false</isCheckable>
       <statusTip></statusTip>
     </Action>
@@ -76,7 +76,7 @@
       <iconText></iconText>
       <activationFlags>10000</activationFlags>
       <activationConditions>0</activationConditions>
-      <shortcut>ctrl+alt+6</shortcut>
+      <shortcut>s,6</shortcut>
       <isCheckable>false</isCheckable>
       <statusTip></statusTip>
     </Action>
@@ -89,7 +89,7 @@
       <iconText></iconText>
       <activationFlags>10000</activationFlags>
       <activationConditions>0</activationConditions>
-      <shortcut>ctrl+alt+7</shortcut>
+      <shortcut>s,7</shortcut>
       <isCheckable>false</isCheckable>
       <statusTip></statusTip>
     </Action>
@@ -102,7 +102,7 @@
       <iconText></iconText>
       <activationFlags>10000</activationFlags>
       <activationConditions>0</activationConditions>
-      <shortcut>ctrl+alt+8</shortcut>
+      <shortcut>s,8</shortcut>
       <isCheckable>false</isCheckable>
       <statusTip></statusTip>
     </Action>
@@ -115,7 +115,7 @@
       <iconText></iconText>
       <activationFlags>10000</activationFlags>
       <activationConditions>0</activationConditions>
-      <shortcut>ctrl+alt+9</shortcut>
+      <shortcut>s,9</shortcut>
       <isCheckable>false</isCheckable>
       <statusTip></statusTip>
     </Action>
@@ -128,7 +128,7 @@
       <iconText></iconText>
       <activationFlags>10000</activationFlags>
       <activationConditions>0</activationConditions>
-      <shortcut>ctrl+alt+0</shortcut>
+      <shortcut>s,0</shortcut>
       <isCheckable>false</isCheckable>
       <statusTip></statusTip>
     </Action>

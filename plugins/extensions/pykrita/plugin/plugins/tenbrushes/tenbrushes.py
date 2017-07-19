@@ -83,7 +83,7 @@ class TenBrushesExtension(Extension):
                 button.setIcon(QIcon(QPixmap.fromImage(p.image())))
 
             buttonBox.addWidget(button)
-            label = QLabel("Ctrl+Alt+" + i)
+            label = QLabel(i)
             label.setAlignment(Qt.AlignHCenter)
             buttonBox.addWidget(label)
             hbox.addLayout(buttonBox)
