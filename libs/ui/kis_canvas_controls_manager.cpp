@@ -88,6 +88,30 @@ void KisCanvasControlsManager::setup(KisActionManager *actionManager)
 
     KisAction *decreaseOpacity = actionManager->createAction("decrease_opacity");
     connect(decreaseOpacity, SIGNAL(triggered()), SLOT(decreaseOpacity()));
+
+    KisAction *setOpacityOpaque = actionManager->createAction("set_opacity_opaque");
+    connect(setOpacityOpaque, SIGNAL(triggered()), SLOT(setOpacityOpaque()));
+
+    KisAction *setOpacityHigh = actionManager->createAction("set_opacity_high");
+    connect(setOpacityHigh, SIGNAL(triggered()), SLOT(setOpacityHigh()));
+
+    KisAction *setOpacityMedium = actionManager->createAction("set_opacity_medium");
+    connect(setOpacityMedium, SIGNAL(triggered()), SLOT(setOpacityMedium()));
+
+    KisAction *setOpacityLow = actionManager->createAction("set_opacity_low");
+    connect(setOpacityLow, SIGNAL(triggered()), SLOT(setOpacityLow()));
+
+    KisAction *setOpacityVeryLow = actionManager->createAction("set_opacity_very_low");
+    connect(setOpacityVeryLow, SIGNAL(triggered()), SLOT(setOpacityVeryLow()));
+
+    KisAction *setOpacityExtremelyLow = actionManager->createAction("set_opacity_extremely_low");
+    connect(setOpacityExtremelyLow, SIGNAL(triggered()), SLOT(setOpacityExtremelyLow()));
+
+    KisAction *halfOpacity = actionManager->createAction("half_opacity");
+    connect(halfOpacity, SIGNAL(triggered()), SLOT(halfOpacity()));
+
+    KisAction *doubleOpacity = actionManager->createAction("double_opacity");
+    connect(doubleOpacity, SIGNAL(triggered()), SLOT(doubleOpacity()));
 }
 
 void KisCanvasControlsManager::setView(QPointer<KisView>imageView)
@@ -277,3 +301,72 @@ void KisCanvasControlsManager::decreaseOpacity()
 {
     stepAlpha(-0.1f);
 }
+
+void KisCanvasControlsManager::setAlpha(float value)
+{
+  if (!m_view) return;
+  if (!m_view->canvas()) return;
+  if (!m_view->resourceProvider()->resourceManager()) return;
+
+  qreal alpha = m_view->resourceProvider()->resourceManager()->resource(KisCanvasResourceProvider::Opacity).toDouble();
+  alpha = value;
+  alpha = qBound<qreal>(0.0, value, 1.0);
+
+  m_view->canvasBase()->resourceManager ()->setResource(KisCanvasResourceProvider::Opacity, alpha);
+
+}
+
+void KisCanvasControlsManager::setOpacityOpaque()
+{
+    setAlpha(1.0f);
+}
+
+void KisCanvasControlsManager::setOpacityHigh()
+{
+    setAlpha(0.8f);
+}
+
+void KisCanvasControlsManager::setOpacityMedium()
+{
+    setAlpha(0.5f);
+}
+
+void KisCanvasControlsManager::setOpacityLow()
+{
+    setAlpha(0.3f);
+}
+
+void KisCanvasControlsManager::setOpacityVeryLow()
+{
+    setAlpha(0.1f);
+}
+
+void KisCanvasControlsManager::setOpacityExtremelyLow()
+{
+    setAlpha(0.01f);
+}
+
+void KisCanvasControlsManager::multiplyAlpha(float factor)
+{
+  if (!m_view) return;
+  if (!m_view->canvas()) return;
+  if (!m_view->resourceProvider()->resourceManager()) return;
+
+  qreal alpha = m_view->resourceProvider()->resourceManager()->resource(KisCanvasResourceProvider::Opacity).toDouble();
+  alpha = alpha * factor;
+  alpha = qBound<qreal>(0.0, alpha, 1.0);
+
+  m_view->canvasBase()->resourceManager ()->setResource(KisCanvasResourceProvider::Opacity, alpha);
+
+}
+
+void KisCanvasControlsManager::halfOpacity()
+{
+  multiplyAlpha(0.5f);
+}
+
+void KisCanvasControlsManager::doubleOpacity()
+{
+  multiplyAlpha(2.0f);
+}
+

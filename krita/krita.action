@@ -321,6 +321,102 @@
       <isCheckable>false</isCheckable>
       <statusTip></statusTip>
     </Action>
+    <Action name="set_opacity_opaque">
+      <icon></icon>
+      <text>Set opaque opacity</text>
+      <whatsThis></whatsThis>
+      <toolTip>Set opaque opacity</toolTip>
+      <iconText>Set opaque opacity</iconText>
+      <activationFlags>0</activationFlags>
+      <activationConditions>0</activationConditions>
+      <shortcut></shortcut>
+      <isCheckable>false</isCheckable>
+      <statusTip></statusTip>
+    </Action>
+    <Action name="set_opacity_high">
+      <icon></icon>
+      <text>Set high opacity</text>
+      <whatsThis></whatsThis>
+      <toolTip>Set high opacity</toolTip>
+      <iconText>Set high opacity</iconText>
+      <activationFlags>0</activationFlags>
+      <activationConditions>0</activationConditions>
+      <shortcut></shortcut>
+      <isCheckable>false</isCheckable>
+      <statusTip></statusTip>
+    </Action>
+    <Action name="set_opacity_medium">
+      <icon></icon>
+      <text>Set medium opacity</text>
+      <whatsThis></whatsThis>
+      <toolTip>Set medium opacity</toolTip>
+      <iconText>Set medium opacity</iconText>
+      <activationFlags>0</activationFlags>
+      <activationConditions>0</activationConditions>
+      <shortcut></shortcut>
+      <isCheckable>false</isCheckable>
+      <statusTip></statusTip>
+    </Action>
+    <Action name="set_opacity_low">
+      <icon></icon>
+      <text>Set low opacity</text>
+      <whatsThis></whatsThis>
+      <toolTip>Set low opacity</toolTip>
+      <iconText>Set low opacity</iconText>
+      <activationFlags>0</activationFlags>
+      <activationConditions>0</activationConditions>
+      <shortcut></shortcut>
+      <isCheckable>false</isCheckable>
+      <statusTip></statusTip>
+    </Action>
+    <Action name="set_opacity_very_low">
+      <icon></icon>
+      <text>Set very low opacity</text>
+      <whatsThis></whatsThis>
+      <toolTip>Set very low opacity</toolTip>
+      <iconText>Set very low opacity</iconText>
+      <activationFlags>0</activationFlags>
+      <activationConditions>0</activationConditions>
+      <shortcut></shortcut>
+      <isCheckable>false</isCheckable>
+      <statusTip></statusTip>
+    </Action>
+    <Action name="set_opacity_extremely_low">
+      <icon></icon>
+      <text>Set extremely low opacity</text>
+      <whatsThis></whatsThis>
+      <toolTip>Set extremely low opacity</toolTip>
+      <iconText>Set extremely low opacity</iconText>
+      <activationFlags>0</activationFlags>
+      <activationConditions>0</activationConditions>
+      <shortcut></shortcut>
+      <isCheckable>false</isCheckable>
+      <statusTip></statusTip>
+    </Action>
+    <Action name="half_opacity">
+      <icon></icon>
+      <text>Half opacity</text>
+      <whatsThis></whatsThis>
+      <toolTip>Half opacity</toolTip>
+      <iconText>Half opacity</iconText>
+      <activationFlags>0</activationFlags>
+      <activationConditions>0</activationConditions>
+      <shortcut></shortcut>
+      <isCheckable>false</isCheckable>
+      <statusTip></statusTip>
+    </Action>
+    <Action name="double_opacity">
+      <icon></icon>
+      <text>Double opacity</text>
+      <whatsThis></whatsThis>
+      <toolTip>Double opacity</toolTip>
+      <iconText>Double opacity</iconText>
+      <activationFlags>0</activationFlags>
+      <activationConditions>0</activationConditions>
+      <shortcut></shortcut>
+      <isCheckable>false</isCheckable>
+      <statusTip></statusTip>
+    </Action>
     <Action name="erase_action">
       <icon>draw-eraser</icon>
       <text>Set eraser mode</text>

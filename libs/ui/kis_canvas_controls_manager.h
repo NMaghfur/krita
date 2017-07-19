@@ -54,6 +54,16 @@ private Q_SLOTS:
 
     void increaseOpacity();
     void decreaseOpacity();
+
+    void setOpacityOpaque();
+    void setOpacityHigh();
+    void setOpacityMedium();
+    void setOpacityLow();
+    void setOpacityVeryLow();
+    void setOpacityExtremelyLow();
+
+    void halfOpacity();
+    void doubleOpacity();
 private:
     void transformColor(int step);
     void transformSaturation(int step);
@@ -61,6 +71,8 @@ private:
     void transformRed(int step);
     void transformBlue(int step);
     void stepAlpha(float step);
+    void setAlpha(float value);
+    void multiplyAlpha(float factor);
 
 private:
     KisViewManager * m_view;
