@@ -2015,6 +2015,18 @@
       <isCheckable>false</isCheckable>
       <statusTip></statusTip>
     </Action>
+    <Action name="Select Greater Blending Mode">
+      <icon></icon>
+      <text>Select Greater Blending Mode</text>
+      <whatsThis></whatsThis>
+      <toolTip>Select Greater Blending Mode</toolTip>
+      <iconText>Select Greater Blending Mode</iconText>
+      <activationFlags>0</activationFlags>
+      <activationConditions>0</activationConditions>
+      <shortcut></shortcut>
+      <isCheckable>false</isCheckable>
+      <statusTip></statusTip>
+    </Action>
   </Actions>
 
   <Actions category="Animation">

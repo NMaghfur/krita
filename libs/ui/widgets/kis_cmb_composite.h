@@ -91,6 +91,7 @@ private Q_SLOTS:
     void slotSaturation();
     void slotColor();
     void slotLuminosity();
+    void slotGreater();
 
 
 

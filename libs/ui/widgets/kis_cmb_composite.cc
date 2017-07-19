@@ -273,6 +273,12 @@ KisCompositeOpComboBox::KisCompositeOpComboBox(QWidget* parent):
     connect(action, SIGNAL(triggered()), SLOT(slotLuminosity()));
     m_actions << action;
 
+    //    Greater
+    //
+    action = new KisAction(i18n("Select Greater Blending Mode"), this);
+    // action->setDefaultShortcut(QKeySequence(Qt::SHIFT + Qt::ALT + Qt::Key_P));
+    connect(action, SIGNAL(triggered()), SLOT(slotGreater()));
+    m_actions << action;
 
 }
 
@@ -478,4 +484,9 @@ void KisCompositeOpComboBox::slotColor()
 void KisCompositeOpComboBox::slotLuminosity()
 {
     selectCompositeOp(KoCompositeOpRegistry::instance().getKoID(COMPOSITE_LUMINIZE));
+}
+
+void KisCompositeOpComboBox::slotGreater()
+{
+    selectCompositeOp(KoCompositeOpRegistry::instance().getKoID(COMPOSITE_GREATER));
 }
